@@ -18,7 +18,7 @@ export default {
       menuList:[
         {
           path:'/',
-          name:'剧集',
+          name:'看剧',
           bgColor:'red'
         },
         {

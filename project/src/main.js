@@ -7,6 +7,11 @@ import store from './store'
 import './assets/css/reset.css'
 import './assets/js/rem.js'
 
+// 引入 axios
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+
 Vue.config.productionTip = false
 
 new Vue({
