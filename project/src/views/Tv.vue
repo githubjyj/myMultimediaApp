@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="item in tvList" :key="item.id">
+      <li v-for="item in tvList" :key="item.id" @click="getDetail(item.id)">
 
         <div class="img">
           <img :src="'https://images.weserv.nl/?url=' + item.cover.url" />
@@ -28,7 +28,7 @@ export default {
   },
   created() {
     this.getData();
-  },
+  }, 
   mounted() {
     this.listenScroll();
   },
@@ -58,7 +58,7 @@ export default {
         fullHeight = htmlDom.offsetHeight;   // 页面总高度
         scrollTop = htmlDom.scrollTop;       // 滚动条距离顶部的距离
         if (deviceHeight + scrollTop > fullHeight - 20) {
-          if (this.isFinish) {
+          if (this.isFinish ) {
             this.start += 10;
           }
           if (this.start < 50) {
@@ -67,6 +67,10 @@ export default {
         }
       };
     },
+    // 获取详情页
+    getDetail(id){
+      this.$router.push('/tvdetails/'+ id)
+    }
   },
 };
 </script>

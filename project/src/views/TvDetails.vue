@@ -1,0 +1,137 @@
+<template>
+  <div>
+
+      <div class="box1">
+          <div class="img">
+              <img :src="'https://images.weserv.nl/?url='+ tvObj.data.cover.image.small.url "/>
+          </div>
+
+          <div class="info">
+              {{tvObj.data.card_subtitle}}
+              <a href="http://www.baidu.com">观看</a>
+              <div>综合评分</div>
+          </div>
+          
+      </div>
+
+      <div class="introduce">
+          <h3>故事情节</h3>
+          {{tvObj.data.intro}}
+      </div>
+
+      <div class="actor">
+          <h3>主演介绍</h3>
+          <ul>
+              <li v-for="item in actorList" :key="item.id">
+                  <span>{{item.title}}</span>
+              </li>
+          </ul>
+      </div>
+
+      <div class="comment">
+          <h3>短评</h3>
+          <ul>
+              <li v-for="item in commentList" :key="item.id">
+                  <img :src="item.user.avatar" class="head_img"><span>{{item.user.name}}</span><span>评分:{{item.rating.value}}</span>
+                  <p>{{item.comment}}</p>
+              </li>
+          </ul>
+      </div>
+
+  </div>
+</template>
+
+<script>
+export default {
+    created () {
+        this.getData()
+        this.getComment()
+    },
+    data(){
+        return{
+            tvObj:{},
+            actorList:[],
+            commentList:[]
+        }
+    },
+    methods:{
+        getData(){
+            let baseUrl = "https://bird.ioliu.cn/v2?url=";
+            let tvUrl = "https://m.douban.com/rexxar/api/v2/tv/" + this.$route.params.id + "?ck=&for_mobile=1"
+            this.axios
+                .get(baseUrl + tvUrl)
+                .then((response) => {
+                    this.tvObj = response
+                    this.actorList = response.data.actors
+                })
+                .catch((err) => console.log(err));
+        },
+        getComment(){
+            let baseUrl = "https://bird.ioliu.cn/v2?url=";
+            let commentUrl = "https://m.douban.com/rexxar/api/v2/tv/" + this.$route.params.id + "/interests?count=4&order_by=hot&start=0&ck=vFuH&for_mobile=1";
+            this.axios
+                .get(baseUrl + commentUrl)
+                .then((response) => {
+                    console.log(response.data.interests);
+                    this.commentList = response.data.interests
+                    console.log(this.commentList);
+                })
+                .catch((err) => console.log(err));
+        }
+    }
+}
+</script>
+
+<style scoped lang="scss">
+    .box1{
+        width:100%;
+        height:7rem;
+        border-bottom:1px solid black;
+        display:flex;
+        .img{
+            flex:3;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+        .info{
+            flex:2;
+        }
+    }
+    .introduce{
+        border-bottom: 1px solid black;
+        h3{
+            font-weight: bolder;
+        }
+    }
+    .actor{
+        width:100%;
+        h3{
+            font-weight: bolder;
+            font-size: 18px;
+        }
+        border-bottom: 1px solid black;
+    }
+
+    .comment{
+        width:100%;
+        h3{
+            font-weight: bolder;
+            border-bottom:1px solid pink;
+        }
+        li{
+            border-bottom: rgb(35,40,52);
+            // background-color: red;
+            border-bottom: red solid 1px;
+
+            .head_img{
+                width:0.5rem;
+                border-radius: 50%;
+                margin-top:5px;
+            }
+        }
+
+    }
+
+</style>
