@@ -37,6 +37,7 @@ header {
   left: 0;
   width: 100%;
   color:white;
+  z-index: 999;
 
   .home {
     position: absolute;
