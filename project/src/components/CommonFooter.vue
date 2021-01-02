@@ -32,8 +32,8 @@ export default {
           bgColor:'yellow'
         },
         {
-          path:'/chat',
-          name:'聊天',
+          path:'/weather',
+          name:'天气',
           bgColor:'blue'
         }
       ]
@@ -59,6 +59,7 @@ footer {
   line-height: 1rem;
   text-align: center;
   position: fixed;
+  z-index: 999;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -73,5 +74,4 @@ footer {
     color:white;
   }
 }
-
 </style>

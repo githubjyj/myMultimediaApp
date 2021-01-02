@@ -69,11 +69,6 @@ export default {
   created () {
     this.getData()
   },
-  computed: {
-    rate(item){
-      return item/2
-    }
-  },
   data(){
     return {
       carouselList:[],

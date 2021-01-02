@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 import Tv from '../views/Tv.vue'
 import Book from '../views/Book.vue'
 import Music from '../views/Music.vue'
-import Chat from '../views/Chat.vue'
+import Weather from '../views/Weather.vue'
 import TvDetails from '../views/TvDetails.vue'
 
 Vue.use(VueRouter)
@@ -14,7 +14,7 @@ const routes = [
   { path: '/',name: 'Tv',component: Tv },
   { path: '/book',name: 'Book',component: Book },
   { path: '/music',name: 'Music',component: Music },
-  { path: '/chat',name: 'Chat',component: Chat },
+  { path: '/weather',name: 'Weather',component: Weather },
   { path: '/tvdetails/:id',name: 'TvDetails',component: TvDetails }
 ]
 

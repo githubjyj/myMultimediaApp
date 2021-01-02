@@ -8,8 +8,6 @@
 
           <div class="info">
               {{tvObj.data.card_subtitle}}
-              <a href="http://www.baidu.com">观看</a>
-              <div>综合评分</div>
           </div>
           
       </div>
@@ -32,7 +30,7 @@
           <h3>短评</h3>
           <ul>
               <li v-for="item in commentList" :key="item.id">
-                  <img :src="item.user.avatar" class="head_img"><span>{{item.user.name}}</span><span>评分:{{item.rating.value}}</span>
+                  <img :src="item.user.avatar" class="head_img"><span>{{item.user.name}}</span><el-rate :value="Math.trunc(item.rating.value/2)" disabled show-score text-color="#ff9900" score-template="{value}"></el-rate>
                   <p>{{item.comment}}</p>
               </li>
           </ul>
@@ -72,9 +70,9 @@ export default {
             this.axios
                 .get(baseUrl + commentUrl)
                 .then((response) => {
-                    console.log(response.data.interests);
+                    // console.log(response.data.interests);
                     this.commentList = response.data.interests
-                    console.log(this.commentList);
+                    // console.log(this.commentList);
                 })
                 .catch((err) => console.log(err));
         }
