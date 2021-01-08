@@ -88,7 +88,7 @@ export default {
           })
     },
     getCity(city){
-      console.log(city.label);
+      // console.log(city.label);
       this.city = city.label
       this.getData()
     }
@@ -109,13 +109,13 @@ export default {
       margin:0.7rem;
       font-weight: bolder;
       color:white;
-      font-size:18px;
+      font-size:0.36rem;
     }
     .todayWeather{
       font-size:1.3rem;
       color:white;
-      padding-left:15px;
-      padding-top:10px;
+      padding-left:0.3rem;
+      padding-top:0.2rem;
       .cond{
         font-size:1rem;
         padding-left:1rem;
@@ -123,14 +123,14 @@ export default {
     }
     .weatherDetails{
       color:white;
-      padding-left:15px;
+      padding-left:0.3rem;
       font-weight: bolder;
     }
   }
   .box2{
     background: white;
     width:100%;
-    height:205px;
+    height:4.1rem;
     position:absolute;
     top:13rem;
     img{
@@ -138,7 +138,7 @@ export default {
     }
     .detail{
       font-weight: bolder;
-      font-size:18px;
+      font-size:0.36rem;
     }
   }
 </style>

@@ -84,7 +84,7 @@ export default {
     .box1{
         width:100%;
         height:7rem;
-        border-bottom:1px solid black;
+        border-bottom:0.02rem solid black;
         display:flex;
         .img{
             flex:3;
@@ -98,7 +98,7 @@ export default {
         }
     }
     .introduce{
-        border-bottom: 1px solid black;
+        border-bottom: 0.02rem solid black;
         h3{
             font-weight: bolder;
         }
@@ -107,29 +107,26 @@ export default {
         width:100%;
         h3{
             font-weight: bolder;
-            font-size: 18px;
+            font-size: 0.36rem;
         }
-        border-bottom: 1px solid black;
+        border-bottom: 0.02rem solid black;
     }
-
     .comment{
         width:100%;
         h3{
             font-weight: bolder;
-            border-bottom:1px solid pink;
+            border-bottom:0.02rem solid pink;
         }
         li{
             border-bottom: rgb(35,40,52);
             // background-color: red;
-            border-bottom: red solid 1px;
+            border-bottom: red solid 0.02rem;
 
             .head_img{
                 width:0.5rem;
                 border-radius: 50%;
-                margin-top:5px;
+                margin-top:0.1rem;
             }
         }
-
     }
-
 </style>

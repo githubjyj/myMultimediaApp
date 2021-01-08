@@ -108,7 +108,7 @@ export default {
 <style lang="scss" scoped>
 .music-item {
   display: flex;
-  padding: 10px;
+  padding: 0.2rem;
   .order {
     flex: 1;
   }

@@ -78,8 +78,8 @@ export default {
 <style lang="scss" scoped>
 li {
   display: flex;
-  padding: 3px;
-  border-bottom: 1px solid black;
+  padding: 0.06rem;
+  border-bottom: 0.02rem solid black;
   .img {
     flex: 3;
     img {
@@ -90,7 +90,7 @@ li {
     flex: 5;
     h3 {
       font-weight: bolder;
-      margin-bottom: 2px;
+      margin-bottom: 0.04rem;
     }
   }
 }
