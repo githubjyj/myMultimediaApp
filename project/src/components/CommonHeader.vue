@@ -1,18 +1,20 @@
 <template>
-  <header :style="{ backgroundColor: curMenu.bgColor }">
+  <header :style="{ backgroundColor: this.$store.state.curMenu.bgColor }">
     <span @click="goHome" class="home">首页</span>
-    {{ curMenu.name }}
+    <!-- {{ curMenu.name }} -->
+    {{this.$store.state.curMenu.name}}
   </header>
 </template>
 
 <script>
-import { mapState } from "vuex";
+// import { mapState } from "vuex";
 import { mapMutations } from "vuex";
 
+
 export default {
-  computed: {
-    ...mapState(["curMenu"]),
-  },
+  // computed: {
+  //   ...mapState(["curMenu"]),
+  // },
   methods: {
     ...mapMutations(["setCurMenu"]),
     goHome() {
@@ -27,6 +29,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
 header {
   height: 1rem;
   background-color: red;
@@ -43,6 +46,7 @@ header {
     position: absolute;
     left: 0;
   }
+
   .router-link-exact-active{
     color:white;
   }

@@ -64,6 +64,7 @@ export default {
                 })
                 .catch((err) => console.log(err));
         },
+        
         getComment(){
             let baseUrl = "https://bird.ioliu.cn/v2?url=";
             let commentUrl = "https://m.douban.com/rexxar/api/v2/tv/" + this.$route.params.id + "/interests?count=4&order_by=hot&start=0&ck=vFuH&for_mobile=1";

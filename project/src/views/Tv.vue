@@ -43,6 +43,7 @@ export default {
           .then((response) => {
             this.tvList = this.tvList.concat(response.data.subject_collection_items);
             this.isFinish = true
+            // console.log(this.tvList);
           })
           .catch((err) => console.log(err));
       }

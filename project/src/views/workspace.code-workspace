@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"name": "lastone",
+			"path": "..\\..\\..\\..\\lastone"
+		},
+		{
+			"name": "myblog2",
+			"path": "..\\..\\..\\..\\新建文件夹\\myblog2"
+		},
+		{
+			"path": "..\\..\\..\\..\\复习\\Vue\\vue-router"
+		},
+		{
+			"path": "..\\..\\..\\..\\复习\\AJAX"
+		},
+		{
+			"path": "..\\..\\..\\..\\成员2"
+		},
+		{
+			"path": "..\\..\\.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "AJAX"
+	}
+}

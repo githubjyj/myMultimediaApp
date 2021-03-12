@@ -23,12 +23,13 @@
       </li>
     </ul>
 
-    <ul class="musicImg">
+    <!-- 接口出现了问题，将图片删除 -->
+    <!-- <ul class="musicImg">
       <li v-for="item in musicList" :key="item.id" @click="getMusic(item.id)">
         <img :src="item.imgUrl" />
       </li>
       <div class="musicInfo"><i class="el-icon-headset"></i>{{musicInfo}}</div>
-    </ul>
+    </ul> -->
 
     <div class="broadcase">
       假如生活中没有能够滋润我们生活的音乐，生活会将是何等的单调，孤寂、枯燥、苍白无力！
@@ -79,7 +80,6 @@ export default {
             };
           });
           this.musicInfo = response.data.playlist.description
-          // console.log(response);
         })
         .catch((err) => console.log(err));
     },
